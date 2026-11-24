@@ -1,0 +1,333 @@
+/* =====================================================
+   HONKAI IMPACT 3RD FAN PAGE - style.css
+   1.  Colors and base
+   2.  Typography
+   3.  Header and navigation
+   4.  Page layout
+   5.  Hero
+   6.  Cards
+   7.  Images
+   8.  Tables
+   9.  Lists
+   10. Forms and buttons
+   11. Section tweaks (Guides)
+   12. Footer
+   ===================================================== */
+p {
+    text-align: justify;
+}
+
+/* ===== 1. Colors and base ===== */
+:root {
+    --bg: #070d1f;
+    --panel: #0f1a38;
+    --line: #22386e;
+    --cyan: #2fd6ff;
+    --pink: #ff4fa3;
+    --gold: #ffcf5a;
+    --text: #e8f1ff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+
+/* ===== 2. Typography ===== */
+h1, h2, h3 {
+    font-family: "Impact", "Arial Black", sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+h2 {
+    color: var(--cyan);
+    font-size: 2rem;
+    border-left: 5px solid var(--pink);
+    padding-left: 0.75rem;
+}
+
+h3 {
+    color: var(--gold);
+    font-size: 1.3rem;
+}
+
+a { color: var(--cyan); }
+a:hover { color: var(--pink); }
+
+
+/* ===== 3. Header and navigation ===== */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 2px solid var(--cyan);
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+}
+
+/* Site name on the left */
+nav > a {
+    font-family: "Impact", "Arial Black", sans-serif;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* Menu links on the right */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--text);
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+nav ul a:hover {
+    color: var(--cyan);
+    border-bottom-color: var(--pink);
+}
+
+
+/* ===== 4. Page layout ===== */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+/* Every section is a grid. Cards (articles) and images sit side by side. */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 3rem;
+}
+
+/* Titles, text, tables, lists and forms take the full row */
+section > h2,
+section > h3,
+section > p,
+section > table,
+section > form,
+section > ul,
+section > ol {
+    grid-column: 1 / -1;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* ===== 5. Hero ===== */
+#overview {
+    display: block;
+    padding-top: 2rem;
+}
+
+#overview h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin: 0 0 0.5rem;
+    text-shadow: 0 0 18px var(--cyan);
+}
+
+/* Tagline (first paragraph) */
+#overview > p:nth-of-type(1) {
+    color: var(--pink);
+    font-size: 1.3rem;
+}
+
+/* Official Website button */
+#overview > a {
+    display: inline-block;
+    background: var(--pink);
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#overview > a:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+#overview > img {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    margin: 1.5rem 0;
+    border: 2px solid var(--cyan);
+    box-shadow: 0 0 24px rgba(47, 214, 255, 0.35);
+}
+
+#overview article { margin-top: 1.5rem; }
+
+
+/* ===== 6. Cards (articles) ===== */
+article {
+    min-width: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--cyan);
+    padding: 1.25rem;
+}
+
+article:hover {
+    border-color: var(--pink);
+    box-shadow: 0 0 18px rgba(255, 79, 163, 0.45);
+}
+
+article h3 { margin-top: 0; }
+
+
+/* ===== 7. Images ===== */
+/* Character pictures inside cards */
+article img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+/* Gallery pictures in the Media section */
+section > img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border: 2px solid var(--line);
+}
+
+section > img:hover { border-color: var(--gold); }
+
+
+/* ===== 8. Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--panel);
+}
+
+th, td {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    overflow-wrap: break-word;
+}
+
+th {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+tbody tr:hover { background: #162650; }
+
+/* Tables inside cards stay inside the card */
+article table {
+    table-layout: fixed;
+    margin-top: 1rem;
+}
+
+
+/* ===== 9. Lists ===== */
+article ul,
+article ol {
+    padding-left: 1.2rem;
+    margin: 0;
+}
+
+section > ul,
+section > ol {
+    line-height: 2;
+}
+
+
+/* ===== 10. Forms and buttons ===== */
+form {
+    display: grid;
+    gap: 0.5rem;
+    max-width: 560px;
+}
+
+label {
+    color: var(--gold);
+    font-weight: bold;
+}
+
+input, select, textarea {
+    padding: 0.6rem;
+    background: var(--panel);
+    color: var(--text);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--cyan);
+}
+
+button {
+    justify-self: start;
+    margin-top: 0.5rem;
+    background: var(--pink);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.7rem 1.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--cyan);
+    color: var(--bg);
+}
+
+
+/* ===== 11. Section tweaks ===== */
+/* Guides: one column so cards with tables have room */
+#guides {
+    grid-template-columns: 1fr;
+}
+
+
+/* ===== 12. Footer ===== */
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: var(--panel);
+    border-top: 2px solid var(--pink);
+    font-size: 0.95rem;
+}
